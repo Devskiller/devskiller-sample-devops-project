@@ -41,6 +41,14 @@ It is possible to automatically assess the solution posted by the candidate.
 final score, calculated during verification, is a direct result of the
 verification tests.
 
+## Candidate's files
+
+There are cases when you need to save some candidate's files for a later
+review. Directory `/var/lib/candidate` exists on every Virtual Machine and its
+contents will be archived after the test.
+
+All archived files will be available for the recruiter for a review.
+
 ## Devskiller project descriptor
 
 Programming tasks can be configured with the Devskiller project descriptor
