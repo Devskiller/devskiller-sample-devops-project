@@ -41,6 +41,9 @@ It is possible to automatically assess the solution posted by the candidate.
 final score, calculated during verification, is a direct result of the
 verification tests.
 
+Verification tests in DevOps tasks *must* reside in the `verification`
+directory, i.e. the `pathPatterns` directive in project descriptor is ignored.
+
 ## Candidate's files
 
 There are cases when you need to save some candidate's files for a later
@@ -62,8 +65,7 @@ Here is an example project descriptor:
 ```json
 {
     "verification" : {
-        "testNamePatterns" : [ ".*Verification.*" ],
-        "pathPatterns" : [ "**verification/verify_**.bats" ]
+        "testNamePatterns" : [ ".*Verification.*" ]
     }
 }
 ```
@@ -81,15 +83,10 @@ To define verification tests, you need to set two configuration properties in
 
 - `testNamePatterns` - an array of RegEx patterns which should match all the
   names of the verification tests.
-- `pathPatterns` - an array of GLOB patterns which should match all the files
-  containing verification tests. These files will not be visible to the
-  candidate during the test.
 
-In our sample task all verifications tests are located in
-`verification/verify_*.bats` files and their names start with `Verification`.
+In our sample task all verifications tests are prefixed with string `Verification`.
 In this case the following patterns will be sufficient:
 
 ```json
-"testNamePatterns" : [".*Verification.*"],
-"pathPatterns" : ["**verification/verify_**.bats"]
+"testNamePatterns" : [".*Verification.*"]
 ```

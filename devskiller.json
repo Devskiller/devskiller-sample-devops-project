@@ -1,6 +1,5 @@
 {
     "verification" : {
-        "testNamePatterns" : [ ".*Verification.*" ],
-        "pathPatterns" : [ "**verification/verify_**.bats" ]
+        "testNamePatterns" : [ ".*Verification.*" ]
     }
 }
