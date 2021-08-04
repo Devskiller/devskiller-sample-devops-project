@@ -84,7 +84,7 @@ To define verification tests, you need to set configuration properties in
 - `testNamePatterns` - an array of RegEx patterns that should match all the
   names of the verification tests.
 
-In our sample task, all verifications tests are prefixed with string Verification
+In our sample task, all verifications tests are prefixed with string `Verification`
 In this case the following patterns will be sufficient:
 
 ```json
