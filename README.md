@@ -21,7 +21,7 @@ This repo contains a sample DevOps project and below you can find a detailed
 guide for creating your own programming project.
 
 **Please make sure to read our [Getting started with programming
-projects](https://goo.gl/gkQU4J) guide first**
+projects](https://goo.gl/gkQU4J) guide first.**
 
 ## Technical details
 
@@ -33,6 +33,14 @@ This task consists of two parts:
 The `init.sh` script is used for initializing the candidate's Virtual Machine.
 You can use it to install and pre-configure all required services.
 
+## Candidate's files
+
+There are cases when you might need to save a candidate's files to review later. Directory `/var/lib/candidate` exists on every Virtual Machine and its contents will be archived after the test.
+
+All archived files will be available to the recruiter to review. 
+
+**The maximum folder size for a Candidate’s files is 20MB. If the files exceed this limit, their contents will be lost. The recruiter will not be able to see the files after the evaluation is complete.**
+
 ## Automatic assessment
 
 It is possible to automatically assess the solution posted by the candidate.
@@ -42,15 +50,7 @@ final score, calculated during verification, is a direct result of the
 verification tests.
 
 Verification tests in DevOps tasks *must* reside in the `verification`
-directory, i.e. the `pathPatterns` directive in project descriptor is ignored.
-
-## Candidate's files
-
-There are cases when you need to save some candidate's files for a later
-review. Directory `/var/lib/candidate` exists on every Virtual Machine and its
-contents will be archived after the test.
-
-All archived files will be available for the recruiter for a review.
+directory, i.e. the `pathPatterns` directive in the project descriptor is ignored.
 
 ## Devskiller project descriptor
 
@@ -78,13 +78,13 @@ You can find more details about the `devskiller.json` descriptor in our
 The solution submitted by the candidate may be verified using automated tests.
 Simply define which tests should be treated as verification tests.
 
-To define verification tests, you need to set two configuration properties in
+To define verification tests, you need to set configuration properties in
 `devskiller.json`:
 
-- `testNamePatterns` - an array of RegEx patterns which should match all the
+- `testNamePatterns` - an array of RegEx patterns that should match all the
   names of the verification tests.
 
-In our sample task all verifications tests are prefixed with string `Verification`.
+In our sample task, all verifications tests are prefixed with string Verification
 In this case the following patterns will be sufficient:
 
 ```json
